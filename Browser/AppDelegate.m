@@ -10,9 +10,19 @@
 
 @implementation AppDelegate
 
+@synthesize window;
+@synthesize webView;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    
+    // web view のサイズを window のサイズに合わせる
+    [self.window setContentView:self.webView];
+    
+    // とりあえず Apple 開いてみる
+    NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [[self.webView mainFrame] loadRequest:req];
 }
 
 @end

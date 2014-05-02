@@ -18,6 +18,7 @@
 		4388277319132E0300A6F8DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4388275219132E0200A6F8DA /* Cocoa.framework */; };
 		4388277B19132E0300A6F8DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4388277919132E0300A6F8DA /* InfoPlist.strings */; };
 		4388277D19132E0300A6F8DA /* BrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4388277C19132E0300A6F8DA /* BrowserTests.m */; };
+		438827871913330A00A6F8DA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438827861913330A00A6F8DA /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		4388277819132E0300A6F8DA /* BrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowserTests-Info.plist"; sourceTree = "<group>"; };
 		4388277A19132E0300A6F8DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4388277C19132E0300A6F8DA /* BrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserTests.m; sourceTree = "<group>"; };
+		438827861913330A00A6F8DA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438827871913330A00A6F8DA /* WebKit.framework in Frameworks */,
 				4388275319132E0200A6F8DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		4388275119132E0200A6F8DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				438827861913330A00A6F8DA /* WebKit.framework */,
 				4388275219132E0200A6F8DA /* Cocoa.framework */,
 				4388277119132E0300A6F8DA /* XCTest.framework */,
 				4388275419132E0200A6F8DA /* Other Frameworks */,
@@ -465,6 +469,7 @@
 				4388278219132E0300A6F8DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4388278319132E0300A6F8DA /* Build configuration list for PBXNativeTarget "BrowserTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +478,7 @@
 				4388278519132E0300A6F8DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
