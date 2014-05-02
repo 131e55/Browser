@@ -19,6 +19,7 @@
 		4388277B19132E0300A6F8DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4388277919132E0300A6F8DA /* InfoPlist.strings */; };
 		4388277D19132E0300A6F8DA /* BrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4388277C19132E0300A6F8DA /* BrowserTests.m */; };
 		438827871913330A00A6F8DA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438827861913330A00A6F8DA /* WebKit.framework */; };
+		438827D3191405BD00A6F8DA /* MainWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 438827D2191405BD00A6F8DA /* MainWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		4388277A19132E0300A6F8DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4388277C19132E0300A6F8DA /* BrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowserTests.m; sourceTree = "<group>"; };
 		438827861913330A00A6F8DA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		438827D1191405BD00A6F8DA /* MainWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWebView.h; sourceTree = "<group>"; };
+		438827D2191405BD00A6F8DA /* MainWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				4388276419132E0300A6F8DA /* AppDelegate.h */,
 				4388276519132E0300A6F8DA /* AppDelegate.m */,
+				438827D1191405BD00A6F8DA /* MainWebView.h */,
+				438827D2191405BD00A6F8DA /* MainWebView.m */,
 				4388276719132E0300A6F8DA /* MainMenu.xib */,
 				4388276A19132E0300A6F8DA /* Images.xcassets */,
 				4388275919132E0300A6F8DA /* Supporting Files */,
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4388276619132E0300A6F8DA /* AppDelegate.m in Sources */,
+				438827D3191405BD00A6F8DA /* MainWebView.m in Sources */,
 				4388275F19132E0300A6F8DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
