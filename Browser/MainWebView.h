@@ -9,5 +9,10 @@
 #import <WebKit/WebKit.h>
 
 @interface MainWebView : WebView
+
+// 初期化
 - (void)initialize;
+
+// リロード
+- (void)reload;
 @end

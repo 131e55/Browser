@@ -26,12 +26,19 @@
     // Drawing code here.
 }
 
+// 初期化
 - (void)initialize
 {
     // とりあえず Apple を開いてみる
     NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [[self mainFrame] loadRequest:req];
+}
+
+// リロード
+- (void)reload
+{
+    [[self mainFrame] reload];
 }
 
 - (BOOL)acceptsFirstResponder
@@ -44,8 +51,20 @@
     return YES;
 }
 
-- (void)keyDown:(NSEvent *)theEvent
+// ショートカットキー受付
+- (void)keyDown:(NSEvent *)event
 {
-    NSLog(@"Key Down");
+    int keycode = [event keyCode];
+    
+    //printf("%d", keycode);
+
+    if ([event modifierFlags] & NSCommandKeyMask) {
+        switch ([event keyCode]) {
+            // Command + R でリロード
+            case 15:
+                [self reload];
+                break;
+        }
+    }
 }
 @end
