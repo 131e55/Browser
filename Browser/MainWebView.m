@@ -29,16 +29,15 @@
 // 初期化
 - (void)initialize
 {
+    // 履歴を保存する
+    [self setMaintainsBackForwardList:YES];
+    
     // とりあえず Apple を開いてみる
     NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [[self mainFrame] loadRequest:req];
-}
-
-// リロード
-- (void)reload
-{
-    [[self mainFrame] reload];
+    
+    
 }
 
 - (BOOL)acceptsFirstResponder
@@ -60,9 +59,19 @@
 
     if ([event modifierFlags] & NSCommandKeyMask) {
         switch ([event keyCode]) {
-            // Command + R でリロード
+            // 'Command' + 'R' でリロード
             case 15:
-                [self reload];
+                [[self mainFrame] reload];
+                break;
+                
+            // 'Command' + ']' で進む
+            case 30:
+                [self goForward];
+                break;
+
+            // 'Command' + '[' で戻る
+            case 33:
+                [self goBack];
                 break;
         }
     }

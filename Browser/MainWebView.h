@@ -12,7 +12,4 @@
 
 // 初期化
 - (void)initialize;
-
-// リロード
-- (void)reload;
 @end
