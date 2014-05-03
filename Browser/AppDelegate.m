@@ -18,4 +18,10 @@
     [mainWebView initialize];
 }
 
+// 閉じた後の再表示の実装
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag {
+    [self.window makeKeyAndOrderFront:nil];
+    return NO;
+}
+
 @end
