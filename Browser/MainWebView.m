@@ -53,26 +53,37 @@
 // ショートカットキー受付
 - (void)keyDown:(NSEvent *)event
 {
-    int keycode = [event keyCode];
+    NSString* characters = [event characters];
+    unichar character = [characters characterAtIndex:0];
     
-    //printf("%d", keycode);
+    //NSLog(@"%c", character);
 
+    // command が押されている
     if ([event modifierFlags] & NSCommandKeyMask) {
-        switch ([event keyCode]) {
-            // 'Command' + 'R' でリロード
-            case 15:
-                [[self mainFrame] reload];
-                break;
-                
-            // 'Command' + ']' で進む
-            case 30:
-                [self goForward];
-                break;
+        
+        // shift が押されていない
+        if (!([event modifierFlags] & NSShiftKeyMask)) {
+            switch (character) {
+                // 'Command' + 'r' or 'Command' + 'R' でリロード
+                // shift は押してないので 'R' になるのは caps lock 時
+                case 'r':
+                case 'R':
+                    [[self mainFrame] reload];
+                    break;
+                    
+                // 'Command' + ']' で進む
+                case ']':
+                    [self goForward];
+                    break;
 
-            // 'Command' + '[' で戻る
-            case 33:
-                [self goBack];
-                break;
+                // 'Command' + '[' で戻る
+                case '[':
+                    [self goBack];
+                    break;
+            }
+        }
+        // shift が押されている (command + shift + ???)
+        else {
         }
     }
 }
