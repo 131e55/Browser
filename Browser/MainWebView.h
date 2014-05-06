@@ -9,7 +9,7 @@
 #import <WebKit/WebKit.h>
 
 @interface MainWebView : WebView
+{
 
-// 初期化
-- (void)initialize;
+}
 @end

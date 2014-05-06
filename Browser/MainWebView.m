@@ -10,24 +10,8 @@
 
 @implementation MainWebView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    return self;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
-}
-
 // 初期化
-- (void)initialize
+- (void)awakeFromNib
 {
     // 履歴を保存する
     [self setMaintainsBackForwardList:YES];
@@ -36,15 +20,15 @@
     NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [[self mainFrame] loadRequest:req];
-    
+//
     
 }
 
+// キーイベントを取得するために必要らしい
 - (BOOL)acceptsFirstResponder
 {
     return YES;
 }
-
 - (BOOL)becomeFirstResponder
 {
     return YES;
@@ -53,16 +37,18 @@
 // ショートカットキー受付
 - (void)keyDown:(NSEvent *)event
 {
-    NSString* characters = [event characters];
+    NSString* characters = [event charactersIgnoringModifiers];
     unichar character = [characters characterAtIndex:0];
     
-    //NSLog(@"%c", character);
-
     // command が押されている
     if ([event modifierFlags] & NSCommandKeyMask) {
-        
-        // shift が押されていない
-        if (!([event modifierFlags] & NSShiftKeyMask)) {
+
+        // shift, control, alt, fn が押されていない
+        if (! ([event modifierFlags] & NSShiftKeyMask) &&
+            ! ([event modifierFlags] & NSControlKeyMask) &&
+            ! ([event modifierFlags] & NSAlternateKeyMask) &&
+            ! ([event modifierFlags] & NSFunctionKeyMask)) {
+
             switch (character) {
                 // 'Command' + 'r' or 'Command' + 'R' でリロード
                 // shift は押してないので 'R' になるのは caps lock 時
@@ -81,9 +67,6 @@
                     [self goBack];
                     break;
             }
-        }
-        // shift が押されている (command + shift + ???)
-        else {
         }
     }
 }

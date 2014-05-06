@@ -10,12 +10,9 @@
 
 @implementation AppDelegate
 
-@synthesize mainWebView;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // MainWebView inialize
-    [mainWebView initialize];
+
 }
 
 // 閉じた後の再表示の実装
