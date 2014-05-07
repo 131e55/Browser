@@ -417,7 +417,12 @@
                     <webView id="hBC-ZN-lsx" customClass="MainWebView">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                            <nil key="identifier"/>
+                        </webPreferences>
+                        <connections>
+                            <outlet property="frameLoadDelegate" destination="HiL-MZ-ffS" id="vy6-jF-Q8c"/>
+                        </connections>
                     </webView>
                     <textField verticalHuggingPriority="750" id="jER-IT-ref">
                         <rect key="frame" x="8" y="584" width="784" height="16"/>
@@ -431,5 +436,11 @@
                 </subviews>
             </view>
         </window>
+        <customObject id="HiL-MZ-ffS" customClass="AppController">
+            <connections>
+                <outlet property="webView" destination="hBC-ZN-lsx" id="yhQ-aP-dYr"/>
+                <outlet property="window" destination="bYv-k1-q9x" id="m7B-na-6ld"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

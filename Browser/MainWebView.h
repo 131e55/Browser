@@ -10,6 +10,5 @@
 
 @interface MainWebView : WebView
 {
-
 }
 @end

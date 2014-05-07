@@ -15,13 +15,6 @@
 {
     // 履歴を保存する
     [self setMaintainsBackForwardList:YES];
-    
-    // とりあえず Apple を開いてみる
-    NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    [[self mainFrame] loadRequest:req];
-//
-    
 }
 
 // キーイベントを取得するために必要らしい
