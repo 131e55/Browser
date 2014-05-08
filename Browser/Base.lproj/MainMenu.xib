@@ -438,6 +438,7 @@
         </window>
         <customObject id="HiL-MZ-ffS" customClass="AppController">
             <connections>
+                <outlet property="address" destination="jER-IT-ref" id="sCt-5C-vPB"/>
                 <outlet property="webView" destination="hBC-ZN-lsx" id="yhQ-aP-dYr"/>
                 <outlet property="window" destination="bYv-k1-q9x" id="m7B-na-6ld"/>
             </connections>

@@ -19,11 +19,29 @@
     [[webView mainFrame] loadRequest:req];
 }
 
-// ウィンドウのタイトルをセット
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
+{
+    
+}
+
+// 読み込み開始の通知
+- (void)webView:(WebView *)sender didStartProvisionalLoadForFrame:(WebFrame *)frame
+{
+    // アドレスバーにURLを表示
+    if (frame == [sender mainFrame]) {
+        NSURLRequest *req = [[frame provisionalDataSource] request];
+        NSString *url = [[req URL] absoluteString];
+        [address setStringValue:url];
+    }
+}
+
+// サイトのタイトルを取得したときの通知
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame
 {
-	if (![frame parentFrame])
+    // タイトルバーにタイトルを表示
+	if (frame == [sender mainFrame]) {
 		[window setTitle:title];
+    }
 }
 
 @end

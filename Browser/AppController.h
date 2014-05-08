@@ -12,6 +12,7 @@
 @interface AppController : NSObject
 {
     IBOutlet NSWindow* window;
+    IBOutlet NSTextField* address;
 	IBOutlet WebView* webView;
 }
 @end
